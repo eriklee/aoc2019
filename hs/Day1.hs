@@ -1,4 +1,5 @@
 {-# LANGUAGE TupleSections #-}
+{-# LANGUAGE TypeApplications #-}
 module Day1 where
 import Data.List (unfoldr)
 import Control.Monad (join)
@@ -14,7 +15,7 @@ day1_1 :: String -> IO Int
 day1_1 fn = sum . map (fuelRequired . read) . lines <$> readFile fn
 
 fuelRequired :: Int -> Int
-fuelRequired = (+ (-2)) . floor . (/3) . fromIntegral
+fuelRequired = (+ (-2)) . floor @Double . (/3) . fromIntegral
 
 day1_2 :: String -> IO Int
 day1_2 fn = sum . join . map (allFuel . read) . lines <$> readFile fn

@@ -42,6 +42,7 @@ runMachine :: Int -> IntMachine -> IntMachine
 runMachine pc im | im M.! pc == 99 = im
 runMachine pc im | im M.! pc == 1  = runMachine (pc + 4) $ add pc im
 runMachine pc im | im M.! pc == 2  = runMachine (pc + 4) $ mult pc im
+runMachine _  im | otherwise       = im
 
 add :: Int -> IntMachine -> IntMachine
 add = math (+)
