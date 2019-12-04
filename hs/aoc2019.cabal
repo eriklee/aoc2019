@@ -9,21 +9,25 @@ cabal-version:       >=1.10
 
 library
   exposed-modules:
-      Day1
-    , Day2
   other-modules:
   -- other-extensions:
   build-depends:       base >=4.12 && <4.13
-                     , containers
-                     , split
-  -- hs-source-dirs:
+  --hs-source-dirs:    .
   default-language:    Haskell2010
 
 executable aoc2019
   main-is:             Main.hs
-  other-modules:
-    Day1
+  other-modules: 
+      Day1
+    , Day2
+    , Day3
+    , Day4
   -- other-extensions:
+  ghc-options: -Wall -O2
   build-depends:       base >=4.12 && <4.13
+                     , aoc2019
+                     , containers
+                     , split
+                     , parsec
   -- hs-source-dirs:
   default-language:    Haskell2010
